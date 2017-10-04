@@ -15,7 +15,7 @@ ArduTermDemo: ArduTermDemo.py
 	python $<
 
 ArduTermKeywordsTests: ArduTermKeywordsTests.robot
-	python -m robot $<
+	$(ROBOT) $<
 
 ArduTermPExpectKeywordsTests: ArduTermPExpectKeywordsTests.robot
 	$(ROBOT) $<
