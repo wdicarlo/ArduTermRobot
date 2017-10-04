@@ -5,6 +5,7 @@ Arduino experiments with Robot Framework
 * [Arduino UNO](https://store.arduino.cc/arduino-uno-rev3) 
 * [bitlash](https://github.com/billroy/bitlash)
 * [python](https://www.python.org)
+* [pexpect](https://github.com/pexpect/pexpect)
 * [Robot Framework](http://robotframework.org)
 * make
 * linux
