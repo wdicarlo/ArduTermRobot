@@ -1,0 +1,7 @@
+*.pyc
+*.log
+*.html
+*.xml
+screenlog.*
+*.txt
+
