@@ -7,12 +7,18 @@ Documentation     Arduino Test cases using the keyword-driven testing approach.
 ...               if also business people need to understand tests. If the
 ...               same workflow needs to repeated multiple times, it is best
 ...               to use to the _data-driven_ approach.
-Library           ArduTermPExpectRobot.py
+Library           ArduTermPExpectRobot
+Library		  ArduTermRobotUtils
 
 *** Test Cases ***
 Send Print Message
     Send Message        print "hello"
     Result should be    hello
+
+Send Print Processed Message
+    ${msg} =            Process Message 	hello
+    Send Message        print "${msg}" 
+    Result should be    arduino: hello
 
 Send Calc Request Message
     Send Message        print 3*2
