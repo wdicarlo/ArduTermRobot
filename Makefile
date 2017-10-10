@@ -5,6 +5,8 @@ ROBOT=python -m robot
 
 all: bitlash-test bitlash_arduterm ArduTermDemo ArduTermKeywordsTests ArduTermPExpectKeywordsTests
 
+tests: test1 test2
+
 bitlash-test: bitlash-test.py
 	python $<
 
@@ -20,5 +22,11 @@ ArduTermKeywordsTests: ArduTermKeywordsTests.robot
 ArduTermPExpectKeywordsTests: ArduTermPExpectKeywordsTests.robot
 	$(ROBOT) $<
 
+test1: ArduTermRobotVariables.py
+	$(ROBOT) -t "send print message" --variablefile $< --name ArduTermRobotVariables --outputdir test1 ArduTermPExpectKeywordsTests.robot 
+
+test2: ArduTermPExpectRobotVariables.py
+	$(ROBOT) -t "send print message" --variablefile $< --name ArduTermPExpectRobotVariables --outputdir test2 ArduTermPExpectKeywordsTests.robot 
+
 clean:
-	-@rm -f *.log screenlog.* *.html *.pyc *.txt
+	-@rm -rf *.log screenlog.* *.html *.pyc *.txt output.xml test1 test2

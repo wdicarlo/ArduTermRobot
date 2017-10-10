@@ -9,16 +9,17 @@ Documentation     Arduino Test cases using the keyword-driven testing approach.
 ...               to use to the _data-driven_ approach.
 Library           ArduTermPExpectRobot
 Library		  ArduTermRobotUtils
+Variables	  ArduTermPExpectRobotVariables.py
 
 *** Test Cases ***
 Send Print Message
-    Send Message        print "hello"
-    Result should be    hello
+    Send Message        print "${HELLO_WORLD_LABEL}"
+    Result should be    ${HELLO_WORLD_LABEL}
 
 Send Print Processed Message
-    ${msg} =            Process Message 	hello
+    ${msg} =            Process Message 	${HELLO_WORLD_LABEL}
     Send Message        print "${msg}" 
-    Result should be    arduino: hello
+    Result should be    arduino: ${HELLO_WORLD_LABEL}
 
 Send Calc Request Message
     Send Message        print 3*2
