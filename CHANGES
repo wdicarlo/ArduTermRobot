@@ -1,0 +1,11 @@
+Version 0.1.0
+ - Added tests characterized by variables files
+ - Added data driven test example
+ - Added example of test using a different library and a variable
+ - Updated Makefile
+ - Added reference to pexpect
+ - Added example of test output
+ - Updated README.md
+ - Added initial experiments mixing pexpect and robot framework
+ - Initial commit
+
